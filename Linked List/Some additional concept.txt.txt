@@ -1,0 +1,26 @@
+# Find_middle_value
+
+Look Hum middle value kese Find krte hai
+loop lgaa kai lenght find krte hai phir lenght//2 is mid vlaue
+This is not so Cool, we can do this using 2 Ptrs
+
+we will use 2 ptrs --> slow and fast
+slow 1 step aage badhega in every iteration
+fast 2 steps aage badhega in every iteration
+isse ye hoga jab slow mid par phochega tab tak fast ya to last node(when length=odd) ya end node(when lenght=even) par hoga.
+initially , slow=fast=head declare krege
+
+while(fast and fast.next): 
+    slow=slow.next
+    fast=fast.next.next
+return slow.data
+
+
+
+# Reversing he LinkedList
+
+Yaad hai hum reversing mai 3 ptr le rhe hai p1,p2,p3
+at the end p2 -> Null ho jaa rha hai
+p1-> points to the last node
+p3-> points to 2nd last node
+Ye useful information hai yaad rhyo p1 -> last node

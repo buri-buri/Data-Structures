@@ -1,3 +1,5 @@
+import sys
+sys.setrecursionlimit(10**6+99)
 class node:
     def __init__(self,data):
         self.data=data
@@ -87,6 +89,9 @@ class LinkedList:
             cnt+=1
         return cnt
     def find_mid(self):
+        if(self.head==None):
+            print('Empty Linked List')
+            return
         slow=fast=self.head
         while(fast and fast.next):
             slow=slow.next
@@ -95,17 +100,49 @@ class LinkedList:
     def traverse(self):
         if(self.head==None):
             print('Empty linked list')
-        else:
-            ptr=self.head
-            while(ptr):
-                print(ptr.data,end=' ')
-                ptr=ptr.next
-            print()
+            return
+        ptr=self.head
+        while(ptr):
+            print(ptr.data,end=' ')
+            ptr=ptr.next
+        print()
+
 ll=LinkedList()
-ll.insertend(1)
-ll.insertend(2)
-ll.insertend(3)
-ll.insertend(4)
-ll.insertend(5)
-ll.insertend(6)
-ll.insertend(7)
+d={
+    0:'exit',
+    11:'insertbeg',
+    12:'insertmig',
+    13:'insertend',
+    21:'deletebeg',
+    22:'deletemid',
+    23:'deleteend',
+    3:'reverse',
+    4:'findmid',
+    5:'traverse'
+}
+while(1):
+    choice=int(input('enter choice - '))
+    try:print('you opt to {}'.format(d[choice]))
+    except:print('Invalid Choice')
+
+    if(choice>10 and choice<14):
+        data=int(input('enter data - '))
+        if(choice==11):ll.insertbeg(data)
+        elif(choice==12):ll.insertmid(data)
+        else:ll.insertend(data)
+
+    if(choice>20 and choice<24):
+        if(choice==21):ll.deletebeg()
+        elif(choice==22):ll.deletemid()
+        else:ll.deleteend()
+
+    elif(choice==3):
+        ll.reverse()
+    elif(choice==4):
+        ll.find_mid()
+    elif(choice==5):
+        ll.traverse()
+    else:
+        if(choice==0):
+            sys.exit()
+    print()

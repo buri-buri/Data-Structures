@@ -1,10 +1,6 @@
 import sys
 sys.setrecursionlimit(10**6+99)
 
-class node:
-    def __inti__(self,data):
-        self.data=data
-        self.next=None
 class Queue:
     def __init__(self,capacity):
         self.head=None

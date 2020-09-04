@@ -55,20 +55,20 @@ d={
 }
 while(1):
     choice=int(input('enter choice - '))
-    try:print('you opt to {}'.format(d[choice]))
-    except:print('Invalid Choice')
-    if(choice==1):
-        data=int(input('enter data - '))
-        s.push(data)
-    elif(choice==2):
-        item=s.pop()
-    elif(choice==3):
-        item=s.peek()
-        if(item):
-            print('top of stack is',item)
-    elif(choice==4):
-        s.traverse()
-    else:
-        if(choice==0):
+    try:
+        print('you opt to {}'.format(d[choice]))
+        if(choice==1):
+            data=int(input('enter data - '))
+            s.push(data)
+        elif(choice==2):
+            item=s.pop()
+        elif(choice==3):
+            item=s.peek()
+            if(item):
+                print('top of stack is',item)
+        elif(choice==4):
+            s.traverse()
+        else:
             sys.exit()
+    except:print('Invalid Choice')
     print()

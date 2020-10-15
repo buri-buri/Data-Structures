@@ -111,7 +111,7 @@ ll=LinkedList()
 d={
     0:'exit',
     11:'insertbeg',
-    12:'insertmig',
+    12:'insertmid',
     13:'insertend',
     21:'deletebeg',
     22:'deletemid',
